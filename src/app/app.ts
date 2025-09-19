@@ -39,7 +39,7 @@ interface TeamMember {
 export class App {
   @ViewChild('navbar') navbar!: ElementRef;
 
-  title = 'SecureWork - Seguridad e Higiene';
+  title = 'SegurHigPro - Seguridad e Higiene';
   mobileMenuOpen = false;
   formSubmitting = false;
   formSubmitted = false;
@@ -69,7 +69,7 @@ export class App {
     {
       title: 'Auditorías de Seguridad',
       description: 'Evaluaciones exhaustivas de riesgos laborales y cumplimiento normativo para mantener tu empresa protegida.',
-      features: ['Identificación de riesgos', 'Planes de mejora', 'Certificaciones'],
+      features: ['Identificación de riesgos', 'Planes de mejora', 'Certificaciones', 'C.A.A (Certificado de Aptitud Ambiental)', 'N.C.A (Nivel de Complejidad Ambiental)', 'Categorización'],
       icon: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.031 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>',
       gradient: 'bg-blue-600',
       bgColor: 'bg-gradient-to-br from-blue-50 to-blue-100'
@@ -93,7 +93,7 @@ export class App {
     {
       title: 'Consultoría Legal',
       description: 'Asesoramiento especializado en normativas y regulaciones de seguridad e higiene laboral.',
-      features: ['Cumplimiento normativo', 'Documentación legal', 'Representación oficial'],
+      features: ['Cumplimiento normativo', 'Documentación legal', 'Representación oficial', 'Habilitaciones municipales', 'Habilitaciones en organismos (Ministerio de Ambiente, Energía, ADA, etc.)'],
       icon: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>',
       gradient: 'bg-orange-600',
       bgColor: 'bg-gradient-to-br from-orange-50 to-orange-100'
@@ -108,8 +108,8 @@ export class App {
     },
     {
       title: 'Higiene Industrial',
-      description: 'Mediciones ambientales y control de agentes físicos, químicos y biológicos.',
-      features: ['Mediciones ambientales', 'Control de contaminantes', 'Equipos de protección'],
+      description: 'Mediciones laborales y control de agentes físicos, químicos y biológicos.',
+      features: ['Mediciones laborales', 'Control de contaminantes', 'Equipos de protección', 'E.I.A (Estudio de Impacto Ambiental)', 'A.S.P (Aparato Sometido a Presión)'],
       icon: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>',
       gradient: 'bg-teal-600',
       bgColor: 'bg-gradient-to-br from-teal-50 to-teal-100'
@@ -125,28 +125,20 @@ export class App {
 
   teamMembers: TeamMember[] = [
     {
-      name: 'María Álvarez',
-      position: 'Directora General',
-      description: 'Ingeniera en Seguridad Industrial con 20 años de experiencia en el sector.',
-      initials: 'MA',
+      name: 'Javier Acerbo',
+      position: 'Licenciado en Higiene y Seguridad Laboral y Ambiental',
+      description: 'Acá un breve texto contando de la trayectoria y virtudes de cada uno',
+      initials: 'JA',
       gradient: 'bg-gradient-to-br from-blue-500 to-purple-600',
-      skills: ['ISO 45001', 'Auditoría']
+      skills: ['Mat. LHS-007216 PBA']
     },
     {
-      name: 'Juan Martínez',
-      position: 'Especialista en Higiene',
-      description: 'Licenciado en Química con especialización en higiene industrial y mediciones ambientales.',
-      initials: 'JM',
+      name: 'Julián Arbelo',
+      position: 'Licenciado en Higiene y Seguridad Laboral y Ambiental',
+      description: 'Acá un breve texto contando de la trayectoria y virtudes de cada uno',
+      initials: 'JA',
       gradient: 'bg-gradient-to-br from-green-500 to-teal-600',
-      skills: ['Química', 'Mediciones']
-    },
-    {
-      name: 'Laura Rodríguez',
-      position: 'Consultora Legal',
-      description: 'Abogada especializada en derecho laboral y normativas de seguridad e higiene.',
-      initials: 'LR',
-      gradient: 'bg-gradient-to-br from-orange-500 to-red-600',
-      skills: ['Legal', 'Normativas']
+      skills: ['Mat. LHS-007220 PBA']
     }
   ];
 
@@ -158,7 +150,7 @@ export class App {
     },
     {
       label: 'Email',
-      value: 'contacto@securework.com.ar',
+      value: 'contacto@segurihigpro.com.ar',
       icon: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>'
     },
     {
@@ -206,7 +198,7 @@ export class App {
     },
     {
       title: 'Contacto',
-      links: ['+54 11 4567-8900', 'contacto@securework.com.ar', 'Av. Corrientes 1234', 'CABA, Argentina', '🟢 Atención 24/7']
+      links: ['+54 11 4567-8900', 'contacto@segurihigpro.com.ar', 'Av. Corrientes 1234', 'CABA, Argentina', '🟢 Atención 24/7']
     }
   ];
 
