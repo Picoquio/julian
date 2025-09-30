@@ -3,15 +3,15 @@
         <div class="flex items-center justify-between h-16">
           <div class="flex items-center">
             <div class="flex-shrink-0">
-              <span class="text-2xl font-bold gradient-text">SegurHigPro</span>
+              <span class="text-2xl font-bold gradient-text">Prevención Total</span>
             </div>
           </div>
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
               <a *ngFor="let link of navLinks"
-                 (click)="scrollToSection(link.target)"
-                 class="nav-link text-white hover:text-accent transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium cursor-pointer">
-                {{link.label}}
+                  (click)="scrollToSection(link.target)"
+                   class="nav-link text-white hover:text-accent transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium cursor-pointer">
+                  {{link.label}}
               </a>
             </div>
           </div>
@@ -36,7 +36,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section #inicio class="min-h-screen hero-gradient flex items-center justify-center relative overflow-hidden">
+    <section #inicio id="inicio" class="min-h-screen hero-gradient flex items-center justify-center relative overflow-hidden">
       <div class="absolute inset-0">
         <div *ngFor="let float of floatingElements; trackBy: trackByIndex"
              [ngStyle]="float.style"
@@ -74,7 +74,7 @@
     </section>
 
     <!-- Services Section -->
-    <section #servicios class="py-20 bg-white">
+    <section #servicios id="servicios" class="py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16 animate-slide-up">
           <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-6">Nuestros Servicios</h2>
@@ -82,19 +82,30 @@
             Ofrecemos soluciones integrales para garantizar la seguridad y el bienestar en tu lugar de trabajo
           </p>
         </div>
+
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div *ngFor="let service of services; trackBy: trackByIndex"
-               [ngClass]="service.bgColor"
-               class="service-card group rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-            <div [ngClass]="service.gradient"
-                 class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-              <div [innerHTML]="service.icon" class="w-8 h-8 text-white"></div>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-800 mb-4">{{service.title}}</h3>
-            <p class="text-gray-600 mb-6">{{service.description}}</p>
-            <ul class="text-sm text-gray-500 space-y-2">
-              <li *ngFor="let feature of service.features">• {{feature}}</li>
-            </ul>
+            <div
+              *ngFor="let service of services; trackBy: trackByIndex"
+              [ngClass]="service.bgColor"
+              class="service-card group rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+            >
+                <div class="flex justify-center">
+                  <div
+                      [ngClass]="service.gradient"
+                      class="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
+                  >
+                      <!-- <div [innerHTML]="service.icon" class="w-8 h-8 text-white">
+                      </div> -->
+                      <fa-icon class="text-xl text-white" [icon]="service.icon" />
+                  </div>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center">{{service.title}}</h3>
+                <p class="text-gray-600 mb-6">
+                    {{service.description}}
+                </p>
+                <ul class="text-sm text-gray-500 space-y-2">
+                    <li *ngFor="let feature of service.features">• {{feature}}</li>
+                </ul>
           </div>
         </div>
       </div>
@@ -140,7 +151,7 @@
     </section> -->
 
     <!-- Team Section -->
-    <section class="py-20 bg-gray-50">
+    <section id="nosotros" class="py-20 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-6">Nuestro Equipo</h2>
@@ -170,7 +181,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section #contacto class="py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
+    <section #contacto id="contacto" class="py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div class="text-white">
@@ -257,7 +268,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 class="text-2xl font-bold gradient-text mb-4">SegurHigPro</h3>
+            <h3 class="text-2xl font-bold gradient-text mb-4">Prevención Total</h3>
             <p class="text-gray-400 mb-4">
               Protegiendo empresas y trabajadores con excelencia y compromiso desde hace más de 15 años.
             </p>
@@ -282,7 +293,7 @@
         </div>
 
         <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; 2025 SegurHigPro. Todos los derechos reservados. | Política de Privacidad | Términos de Servicio</p>
+          <p>&copy; 2025 Prevención Total. Todos los derechos reservados. | Política de Privacidad | Términos de Servicio</p>
         </div>
       </div>
     </footer>

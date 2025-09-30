@@ -1,8 +1,10 @@
 import { RouterOutlet } from '@angular/router';
-// app.component.ts
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, Signal, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faFilePen, faHandSparkles, faHelmetSafety, faLeaf, faMagnifyingGlass, faMagnifyingGlassChart, faScaleBalanced, faShield, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
 
 interface ContactForm {
   name: string;
@@ -16,7 +18,7 @@ interface Service {
   title: string;
   description: string;
   features: string[];
-  icon: string;
+  icon: any;
   gradient: string;
   bgColor: string;
 }
@@ -32,14 +34,21 @@ interface TeamMember {
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CommonModule, FormsModule],
+  imports: [RouterOutlet, CommonModule, FormsModule, FontAwesomeModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
   @ViewChild('navbar') navbar!: ElementRef;
 
-  title = 'SegurHigPro - Seguridad e Higiene';
+  faTriangleExclamation = faTriangleExclamation;
+  faHelmetSafety = faHelmetSafety;
+  faFilePen = faFilePen;
+  faMagnifyingGlassChart = faMagnifyingGlassChart;
+  faScaleBalanced = faScaleBalanced;
+  faHandSparkles = faLeaf;
+
+  title = 'Prevención Total - Seguridad e Higiene';
   mobileMenuOpen = false;
   formSubmitting = false;
   formSubmitted = false;
@@ -54,9 +63,9 @@ export class App {
 
   navLinks = [
     { label: 'Inicio', target: 'inicio' },
-    { label: 'Servicios', target: 'servicios' },
-    { label: 'Nosotros', target: 'nosotros' },
-    { label: 'Contacto', target: 'contacto' }
+    { label: 'Servicios', target: 'servicios', href: 'inicio' },
+    { label: 'Nosotros', target: 'nosotros', href: 'inicio' },
+    { label: 'Contacto', target: 'contacto', href: 'inicio' }
   ];
 
   floatingElements = [
@@ -70,7 +79,7 @@ export class App {
       title: 'Auditorías de Seguridad',
       description: 'Evaluaciones exhaustivas de riesgos laborales y cumplimiento normativo para mantener tu empresa protegida.',
       features: ['Identificación de riesgos', 'Planes de mejora', 'Certificaciones', 'C.A.A (Certificado de Aptitud Ambiental)', 'N.C.A (Nivel de Complejidad Ambiental)', 'Categorización'],
-      icon: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.031 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>',
+      icon: this.faHelmetSafety,
       gradient: 'bg-blue-600',
       bgColor: 'bg-gradient-to-br from-blue-50 to-blue-100'
     },
@@ -78,7 +87,7 @@ export class App {
       title: 'Capacitación',
       description: 'Programas de formación especializados para crear una cultura de seguridad en tu organización.',
       features: ['Talleres presenciales', 'Cursos online', 'Material didáctico'],
-      icon: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>',
+      icon: this.faFilePen,
       gradient: 'bg-green-600',
       bgColor: 'bg-gradient-to-br from-green-50 to-green-100'
     },
@@ -86,7 +95,7 @@ export class App {
       title: 'Análisis de Riesgos',
       description: 'Estudios detallados para identificar y mitigar potenciales peligros en el ambiente laboral.',
       features: ['Matrices de riesgo', 'Planes preventivos', 'Monitoreo continuo'],
-      icon: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>',
+      icon: this.faMagnifyingGlassChart,
       gradient: 'bg-purple-600',
       bgColor: 'bg-gradient-to-br from-purple-50 to-purple-100'
     },
@@ -94,7 +103,7 @@ export class App {
       title: 'Consultoría Legal',
       description: 'Asesoramiento especializado en normativas y regulaciones de seguridad e higiene laboral.',
       features: ['Cumplimiento normativo', 'Documentación legal', 'Representación oficial', 'Habilitaciones municipales', 'Habilitaciones en organismos (Ministerio de Ambiente, Energía, ADA, etc.)'],
-      icon: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>',
+      icon: this.faScaleBalanced,
       gradient: 'bg-orange-600',
       bgColor: 'bg-gradient-to-br from-orange-50 to-orange-100'
     },
@@ -102,7 +111,7 @@ export class App {
       title: 'Planes de Emergencia',
       description: 'Desarrollo de protocolos de actuación ante situaciones de emergencia y evacuación.',
       features: ['Simulacros', 'Señalización', 'Brigadas de emergencia'],
-      icon: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>',
+      icon: this.faTriangleExclamation,
       gradient: 'bg-red-600',
       bgColor: 'bg-gradient-to-br from-red-50 to-red-100'
     },
@@ -110,7 +119,7 @@ export class App {
       title: 'Higiene Industrial',
       description: 'Mediciones laborales y control de agentes físicos, químicos y biológicos.',
       features: ['Mediciones laborales', 'Control de contaminantes', 'Equipos de protección', 'E.I.A (Estudio de Impacto Ambiental)', 'A.S.P (Aparato Sometido a Presión)'],
-      icon: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>',
+      icon: this.faHandSparkles,
       gradient: 'bg-teal-600',
       bgColor: 'bg-gradient-to-br from-teal-50 to-teal-100'
     }
