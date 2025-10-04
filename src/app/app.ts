@@ -136,7 +136,7 @@ export class App {
     {
       name: 'Javier Acerbo',
       position: 'Licenciado en Higiene y Seguridad Laboral y Ambiental',
-      description: 'Acá un breve texto contando de la trayectoria y virtudes de cada uno',
+      description: 'Con una sólida formación académica y experiencia en el ámbito de la Higiene y Seguridad Laboral y Ambiental, Javier se destaca por su compromiso con la prevención, la responsabilidad social y la mejora continua en los entornos de trabajo. Su trayectoria refleja dedicación, ética profesional y un profundo interés en aportar soluciones que generen un impacto positivo tanto en las personas como en las organizaciones.',
       initials: 'JA',
       gradient: 'bg-gradient-to-br from-blue-500 to-purple-600',
       skills: ['Mat. LHS-007216 PBA']
@@ -144,7 +144,7 @@ export class App {
     {
       name: 'Julián Arbelo',
       position: 'Licenciado en Higiene y Seguridad Laboral y Ambiental',
-      description: 'Acá un breve texto contando de la trayectoria y virtudes de cada uno',
+      description: 'Reconocido por su enfoque integral y su capacidad para promover ambientes laborales seguros y sostenibles, Julián ha orientado su carrera hacia la protección de la salud y el bienestar de las personas. Su labor combina conocimientos técnicos con una visión estratégica, lo que le permite acompañar a empresas e instituciones en la implementación de prácticas responsables y de alto valor agregado.',
       initials: 'JA',
       gradient: 'bg-gradient-to-br from-green-500 to-teal-600',
       skills: ['Mat. LHS-007220 PBA']
@@ -159,12 +159,12 @@ export class App {
     },
     {
       label: 'Email',
-      value: 'contacto@segurihigpro.com.ar',
+      value: 'contacto@prevenciontotal.com.ar',
       icon: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>'
     },
     {
-      label: 'Dirección',
-      value: 'Av. Corrientes 1234<br>CABA, Argentina',
+      label: 'Área de trabajo',
+      value: 'Provincia de Buenos Aires',
       icon: '<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>'
     }
   ];
@@ -207,7 +207,7 @@ export class App {
     },
     {
       title: 'Contacto',
-      links: ['+54 11 4567-8900', 'contacto@segurihigpro.com.ar', 'Av. Corrientes 1234', 'CABA, Argentina', '🟢 Atención 24/7']
+      links: ['+54 11 4567-8900', 'contacto@prevenciontotal.com.ar', 'Av. Corrientes 1234', 'CABA, Argentina', '🟢 Atención 24/7']
     }
   ];
 
